@@ -1,5 +1,5 @@
 {
-  "name": "@salty-caramel/store",
+  "name": "salty-caramel-store",
   "version": "0.1.0",
   "description": "A starter for Medusa projects.",
   "author": "Sebastian Rindom <skrindom@gmail.com>",
@@ -8,7 +8,9 @@
     "seed": "medusa seed -f ./data/seed.json",
     "build": "babel src -d dist --extensions \".ts,.js\"",
     "start": "medusa migrations run && medusa develop -p=8080",
-    "start:dev": "medusa develop"
+    "start:dev": "medusa develop",
+    "heroku-postbuild": "medusa migrations run",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@medusajs/medusa": "^1.6.0",
